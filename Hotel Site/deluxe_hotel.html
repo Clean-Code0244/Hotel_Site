@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-image: url("../../otel resimleri/body.jpg");
+        /*background-attachment: fixed;*/
+        background-repeat: no-repeat;
+        background-size: 100vw 100vh;
+      }
+      body::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+      }
+
+      #icon {
+        font-size: 3rem;
+      }
+      a {
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: #fff;
+        padding: 0.7rem;
+        
+      }
+      a:hover {
+        text-decoration: underline rgb(247, 178, 5);
+        color:crimson;
+
+      }
+     
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(235, 250, 25, 0.323);
+        position: sticky;
+        top: 0;
+      }
+      .main {
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 90vh;
+      }
+      section i {
+        font-size: 3rem;
+        text-align: center;
+      }
+      section {
+        margin-top: 1rem;
+        background-color: #fff;
+        display: flex;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        justify-content: space-evenly;
+        align-items: center;
+        justify-content: center;
+      }
+      section p {
+        text-align: center;
+        color: coral;
+      }
+      section div {
+        margin: 3px;
+        text-align: center;
+        border-radius: 3px;
+      }
+
+      article {
+        display: flex;
+
+        justify-content: space-between;
+        text-align: center;
+        
+      }
+      article div{
+        flex-direction: 30%;
+        margin:0 10px;
+      }
+      #ingredients {
+        background-color: rgb(148, 158, 114);
+      }
+      .second_article {
+        display: flex;
+        
+        flex-grow: 1;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        text-align: center;
+      }
+      .second_article div{
+        flex-direction: 30%;
+        margin:0 10px;
+      }
+      .title {
+        background-color: cornsilk;
+        text-align: center;
+        color: blue;
+      }
+      .galery {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 3rem;
+      }
+      .fotogalery {
+        display: flex;
+        flex-wrap: wrap;
+        flex-grow: 1;
+      }
+      .fotogalery img {
+        width: 100%;
+        padding: 0.4rem;
+      }
+      .fotogalery img:hover {
+        cursor: pointer;
+        opacity: 0.9;
+        transform: scale(1.2);
+        transition-duration: 0.9;
+      }
+      .fotogalery div {
+        overflow: hidden;
+        flex: 25%;
+      }
+      .room_info {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 2rem;
+        background-color: aquamarine;
+      }
+      .room_info div {
+        display: flex;
+        
+        flex: 25%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 2rem;
+      }
+      .room_info img {
+        width: 100%;
+        height: 100%;
+      }
+      .room_info p {
+        background-color: chocolate;
+        color: chartreuse;
+        margin: 1rem;
+      }
+      .personel {
+        clip-path: circle(50% at 50% 50%);
+      }
+      .contact {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100%;
+        background-color: darkkhaki;
+      }
+      .contact div {
+        flex-direction: 30%;
+        margin: 2rem;
+      }
+      .contact label{
+        font-size: 2rem;
+
+      }
+      .contact input:hover{
+        cursor: pointer;
+        background-color: antiquewhite;
+      }
+      .contact img{
+        width: 450px;
+      }
+      @media(max-width:400px){
+        html{
+          font-size: 10px;
+        }
+        nav{
+          flex-direction: column;
+          height: 100px;
+          padding: 20px;
+        }
+        nav a{
+          padding: 10px;
+          margin: 0 3px;
+        }
+        .second_article{
+          flex-wrap: wrap;
+        }
+        article{
+          flex-wrap: wrap;
+        }
+      }
+    </style>
+  </head>
+  <body id="body">
+    <nav>
+      <div>
+        <i id="icon" class="fa fa-hotel"></i>
+        <h1 style="display: inline-block">
+          <span style="color: rgb(255, 0, 0)">DELUXE</span> HOTEL
+        </h1>
+      </div>
+      <div class="links">
+        <a href="#body">Home</a>
+        <a href="#section">About</a>
+        <a href="#galery1">Galery</a>
+        
+        <a href="#about_rooms">Rooms</a>
+        <a href="#about_personels">Personels</a>
+        <a href="#contact_session">Contact</a>
+      </div>
+    </nav>
+
+    <div class="main">
+      <p style="font-size: 3rem; color: #fff">WELCOME TO DELUXE</p>
+      <p style="color: #fff">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta,
+        assumenda.
+      </p>
+      <p><button type="button" class="btn btn-primary">Read More</button></p>
+    </div>
+    <section id="section">
+      <div id="front_desk">
+        <h3>ADRESS AND COMMUNICATION</h3>
+        <i class="fa fa-address-book" style="font-size: 48px; color: red"></i>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat,
+          optio.
+        </p>
+      </div>
+      <div id="restaruant">
+        <h3>RESTAURANT</h3>
+        <i class="fa fa-cutlery" style="font-size: 48px; color: red"></i>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,
+          aperiam.
+        </p>
+      </div>
+      <div id="transfer">
+        <h3>TRANSFER</h3>
+        <i class="fa fa-taxi" style="font-size: 48px; color: red"></i>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, sed.
+        </p>
+      </div>
+      <div id="spa_suites">
+        <h3>SPA SUITES</h3>
+        <i class="fa fa-bathtub" style="font-size: 48px; color: red"></i>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse,
+          pariatur.
+        </p>
+      </div>
+    </section>
+    <article id="article">
+      <div id="image">
+        <img
+          src="../../otel resimleri/luks-otel-tasarimi-luks-yatak-odasi-takimi189753832.jpg"
+          alt=""
+          height="500px;"
+        />
+      </div>
+      <div id="ingredients">
+        <h3>ROOMS</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam
+          aliquam illo dolorem officia ea consequuntur possimus, nesciunt minima
+          sapiente, sunt nisi neque aut? Totam, consequuntur exercitationem quod
+          similique et ad!
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi
+          repellendus architecto error, quaerat neque corrupti, id molestias et
+          fuga tempore voluptas reprehenderit dolor aliquid accusamus eligendi
+          sunt iusto ipsam. Nisi!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+          pariatur eligendi cum distinctio incidunt nam sunt, assumenda
+          consectetur cumque magnam nemo doloribus architecto tempora
+          reprehenderit culpa officiis voluptas, iure suscipit.
+        </p>
+        <p><button class="btn btn-primary">Read More</button></p>
+      </div>
+    </article>
+    <div class="galery" id="galery1">
+      <div class="title">
+        <h1>HOTEL GALERY</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+          molestias recusandae ipsa dignissimos voluptate saepe perspiciatis,
+          aliquid impedit repellendus quam.
+        </p>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe
+          molestiae ipsam velit repudiandae dolorem quas eligendi a
+          consequuntur. Harum, quisquam.
+        </p>
+      </div>
+      <div class="fotogalery">
+        <div>
+          <img src="../../otel resimleri/1589-entry-1-1644220668.jpg" alt="" />
+        </div>
+        <div>
+          <img
+            src="../../otel resimleri/25-lüks-otel-corona-virüs-tedavi-merkezi-oluyor.jpg"
+            alt=""
+          />
+        </div>
+        <div>
+          <img src="../../otel resimleri/9355.jpg" alt="" />
+        </div>
+        <div>
+          <img src="../../otel resimleri/Le-Bijou.jpg" alt="" />
+        </div>
+        <div>
+          <img src="../../otel resimleri/lukstarfaotelodasi.jpg" alt="" />
+        </div>
+        <div>
+          <img src="../../otel resimleri/Otel-Oda-Proje-9.jpg" alt="" />
+        </div>
+        <div>
+          <img
+            src="../../otel resimleri/pngtree-stunning-hotel-suite-with-3d-rendered-luxury-bedroom-tv-and-sleek-image_3662777.png"
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            src="../../otel resimleri/lune-otel-odasi-otel-odasi-mobilyalari-121384-16-B.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <div class="second_article">
+      <div>
+        <img src="9355.jpg" alt="" height="500px" />
+      </div>
+      <div id="ingredients">
+        <h3>ROOMS</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam
+          aliquam illo dolorem officia ea consequuntur possimus, nesciunt minima
+          sapiente, sunt nisi neque aut? Totam, consequuntur exercitationem quod
+          similique et ad!
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi
+          repellendus architecto error, quaerat neque corrupti, id molestias et
+          fuga tempore voluptas reprehenderit dolor aliquid accusamus eligendi
+          sunt iusto ipsam. Nisi!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+          pariatur eligendi cum distinctio incidunt nam sunt, assumenda
+          consectetur cumque magnam nemo doloribus architecto tempora
+          reprehenderit culpa officiis voluptas, iure suscipit.
+        </p>
+        <p><button class="btn btn-primary">Read More</button></p>
+      </div>
+    </div>
+    <div class="title" id="about_rooms">
+      <h1 style="margin-top: 2rem">ABOUT ROOMS</h1>
+    </div>
+    <div class="room_info">
+      <div>
+        <img src="../../otel resimleri/lukstarfaotelodasi.jpg" alt="" />
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim eos
+          nobis nulla sit, quia voluptate fugit ducimus consequatur architecto
+          doloremque.
+        </p>
+        <p><button class="btn btn-primary">Details</button></p>
+      </div>
+      <div>
+        <img src="../../otel resimleri/Le-Bijou.jpg" alt="" />
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim eos
+          nobis nulla sit, quia voluptate fugit ducimus consequatur architecto
+          doloremque.
+        </p>
+        <p><button class="btn btn-primary">Details</button></p>
+      </div>
+      <div>
+        <img src="../../otel resimleri/9355.jpg" alt="" />
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim eos
+          nobis nulla sit, quia voluptate fugit ducimus consequatur architecto
+          doloremque.
+        </p>
+        <p><button class="btn btn-primary">Details</button></p>
+      </div>
+    </div>
+    <div class="title" id="about_personels">
+      <h1 style="margin-top: 2rem">ABOUT PERSONELS</h1>
+    </div>
+    <div class="room_info" style="background-color: burlywood">
+      <div>
+        <img class="personel" src="../../otel resimleri/yntc1.jpg" alt="" />
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim eos
+          nobis nulla sit, quia voluptate fugit ducimus consequatur architecto
+          doloremque.
+        </p>
+        <p><button class="btn btn-primary">CONTACT</button></p>
+      </div>
+      <div>
+        <img class="personel" src="../../otel resimleri/yntc2.jpg" alt="" />
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim eos
+          nobis nulla sit, quia voluptate fugit ducimus consequatur architecto
+          doloremque.
+        </p>
+        <p><button class="btn btn-primary">CONTACT</button></p>
+      </div>
+      <div id="contact_session">
+        <img class="personel" src="../../otel resimleri/yntc3.jpg" alt="" />
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim eos
+          nobis nulla sit, quia voluptate fugit ducimus consequatur architecto
+          doloremque.
+        </p>
+        <p><button class="btn btn-primary">CONTACT</button></p>
+      </div>
+    </div>
+    <div class="contact">
+      <div>
+        <img src="../../otel resimleri/contact.jpg" alt="" />
+      </div>
+      <div id="form">
+       <label for="name">Name :</label>
+       <input type="text" id="name" placeholder="Please enter your name"><br>
+       <label for="email">Email :</label>
+       <input type="text" name="" id="email" placeholder="Enter your email"><br>
+       <label for="phone">Phone : </label>
+       <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="(0)-">
+      </div><br>
+      <div><button class="btn btn-primary">CONTACT</button></div>
+    
+  </body>
+</html>
